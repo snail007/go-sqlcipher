@@ -76,6 +76,7 @@ _sqlite3_step(sqlite3_stmt* stmt, long long* rowid, long long* changes)
 */
 import "C"
 import (
+	"context"
 	"database/sql"
 	"database/sql/driver"
 	"errors"
@@ -87,9 +88,7 @@ import (
 	"strings"
 	"time"
 	"unsafe"
-
-	"golang.org/x/net/context"
-)
+	)
 
 // SQLiteTimestampFormats is timestamp formats understood by both this module
 // and SQLite.  The first format in the slice will be used when saving time
